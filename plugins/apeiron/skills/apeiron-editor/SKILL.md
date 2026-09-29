@@ -3,7 +3,6 @@ name: apeiron-editor
 description: Launch and drive the Apeiron Engine editor as an agent — start it with its JSON-RPC agent door open, then call ops, inspect the scene, enter Play, and take screenshots through the bundled driver script. Use when asked to run/start/launch the Apeiron editor, build or place something in a scene, screenshot or look at a scene, test gameplay, reproduce an editor bug, or verify that a change works in the real running app.
 license: MIT OR Apache-2.0
 compatibility: Requires the Apeiron Engine editor — the `app-native` executable, located via $NGINE_EDITOR, the `ngine where` resolver, $NGINE_HOME / $NGINE_ENGINES, or PATH. Needs Python 3 with the standard library only (no pip install). Does not need an engine source checkout, a Rust toolchain, or network access.
-allowed-tools: Bash(python:*) Bash(python3:*)
 ---
 
 # Drive the Apeiron Engine editor
