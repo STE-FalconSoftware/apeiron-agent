@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "ngine": {
+      "command": "ngine",
+      "args": [
+        "mcp",
+        "bridge",
+        "--stdio",
+        "--autolaunch"
+      ],
+      "env": {
+        "NGINE_PLUGIN_ENGINE_RANGE": ">=0.2.0-preview.1 <0.3.0"
+      }
+    }
+  }
+}

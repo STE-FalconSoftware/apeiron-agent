@@ -1,0 +1,18 @@
+{
+  "description": "Apeiron: tell the session which editor (if any) belongs to this folder",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "ngine mcp bridge --context || echo \"Apeiron: the ngine command is not on PATH - install the Apeiron Engine, then restart Claude Code.\"",
+            "timeout": 30,
+            "statusMessage": "Checking for an Apeiron editor"
+          }
+        ]
+      }
+    ]
+  }
+}

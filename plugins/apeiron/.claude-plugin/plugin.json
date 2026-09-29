@@ -1,0 +1,23 @@
+{
+  "name": "apeiron",
+  "displayName": "Apeiron Engine",
+  "version": "0.1.0",
+  "description": "Drive the Apeiron Engine editor from Claude Code: the engine's agent skills, an MCP server that starts the editor for your project on the first call, slash commands, verification agents and a session hook that says which editor belongs to this folder.",
+  "author": {
+    "name": "STE Falcon Software",
+    "url": "https://apeiron-engine.pages.dev"
+  },
+  "homepage": "https://apeiron-engine.pages.dev",
+  "license": "MIT OR Apache-2.0",
+  "keywords": [
+    "apeiron",
+    "game-engine",
+    "mcp",
+    "rust",
+    "wgpu",
+    "agent"
+  ],
+  "metadata": {
+    "engine": ">=0.2.0-preview.1 <0.3.0"
+  }
+}
