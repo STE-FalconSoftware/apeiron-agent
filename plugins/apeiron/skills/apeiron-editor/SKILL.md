@@ -14,7 +14,7 @@ settle that first.
 ## Which editor are you driving?
 
 **A local editor** — you have the `app-native` executable, or `$NGINE_EDITOR` is set.
-Launched with `NGINE_MCP=1` it serves **newline-delimited JSON-RPC over TCP on
+It opens its agent door at launch (on by default; `NGINE_MCP=0` keeps it shut) and serves **newline-delimited JSON-RPC over TCP on
 127.0.0.1:8731**, one request line, one response line. Drive it with `scripts/driver.py`, beside
 this file. See [references/transports.md](references/transports.md).
 
@@ -131,11 +131,11 @@ happened.
 
 - `[refusal:human_only]` — a setting that spends money, raises a spend cap or redirects a credential
   (Meshy `test_mode` / `credit_budget`, the AI assistant's provider/endpoint/budgets). A person changes it
-  in the window the reply names; ask them. `plugin.budget_status` shows the session spend, and
+  in the window the reply names; ask them. `plugin.budget_status` shows the spend over the last rolling 24 hours (it survives an editor restart), and
   `plugin.budget_set {credits}` can only LOWER what may be spent.
 - `[refusal:spend.budget]` in a generation reply — nothing was sent and nothing was spent.
 - `rate_limited` (with `retry_after_ms`) — back off; put bulk work in one `ngine.batch`.
-- `[refusal:read_policy]` — a path under a credential store (`~/.ssh`, `~/.aws`, …) is not readable.
+- `[refusal:read_policy]` — a path under a credential store (`~/.ssh`, `~/.aws`, a browser profile, the engine's own `*.token` files, …) or a Windows network (UNC) path is not readable.
 - `CONFLICT: … UNSAVED changes` from `project.open` / `project.start_empty` — `level.save` first, or pass
   `resolution:'open'` (discard) / `'keep'`.
 - `code: precondition.device_lost` from a capture — the GPU device is gone; verify numerically and restart.
@@ -186,6 +186,7 @@ editor FOCUSES it instead of opening a second one.
 
 | Reference | Read it when |
 |---|---|
+| [references/recipes.md](references/recipes.md) | before authoring anything: which recipe (`recipe <name>`) answers which task |
 | [references/transports.md](references/transports.md) | before your first launch — the driver's commands, how it finds the editor, the log |
 | [references/conventions.md](references/conventions.md) | before authoring — argument keys, ids, colour space, axes, sizes, and clean captures |
 | [references/troubleshooting.md](references/troubleshooting.md) | the moment anything behaves oddly — the symptom table, and sharing an editor with another driver |

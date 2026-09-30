@@ -1,4 +1,6 @@
 ---
+name: new-project
+disable-model-invocation: true
 description: Create a new Apeiron project and open it
 argument-hint: <project name> [template]
 ---

@@ -8,6 +8,7 @@
     "url": "https://apeiron-engine.pages.dev"
   },
   "homepage": "https://apeiron-engine.pages.dev",
+  "repository": "https://github.com/STE-FalconSoftware/apeiron-agent",
   "license": "MIT OR Apache-2.0",
   "keywords": [
     "apeiron",

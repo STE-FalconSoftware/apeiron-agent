@@ -1,4 +1,6 @@
 ---
+name: lookdev
+disable-model-invocation: true
 description: Judge the current view against a reference image, with measured evidence
 argument-hint: [reference image path or inbox name]
 ---

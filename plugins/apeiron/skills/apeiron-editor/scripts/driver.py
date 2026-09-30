@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Drive the running Ngine editor over its live MCP JSON-RPC socket.
 
-The editor launched with NGINE_MCP=1 serves newline-delimited JSON-RPC over TCP on
+The editor (agent door on by default; NGINE_MCP=0 closes it) serves newline-delimited JSON-RPC over TCP on
 127.0.0.1:8731 (one request line -> one response line). This is the agent's hands.
 
 Every subcommand is safe to run repeatedly. Read-only ops (status/catalog/describe/
@@ -272,7 +272,7 @@ class Editor:
                 " re-read the file."
                 if tok
                 else "no token file found — is an editor actually running on this port with"
-                " NGINE_MCP=1?"
+                " the agent door open (NGINE_MCP=0 or the status bar closes it)?"
             )
             die(
                 f"the editor refused this connection: {msg}\n{hint}\nlooked in:\n  {where}",

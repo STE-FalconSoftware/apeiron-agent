@@ -1,7 +1,7 @@
 # The driver, and how it reaches the editor
 
-The editor serves **newline-delimited JSON-RPC over TCP on 127.0.0.1:8731** when launched with
-`NGINE_MCP=1`. `scripts/driver.py` is the supported client for that socket.
+The editor serves **newline-delimited JSON-RPC over TCP on 127.0.0.1:8731** (the door the editor
+opens at launch: on by default, `NGINE_MCP=0` vetoes it). `scripts/driver.py` is the supported client for that socket.
 
 ## Why use the driver rather than your own client
 

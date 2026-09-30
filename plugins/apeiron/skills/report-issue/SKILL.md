@@ -1,4 +1,6 @@
 ---
+name: report-issue
+disable-model-invocation: true
 description: Collect what a bug report needs from the running editor
 allowed-tools: Bash(ngine doctor:*), Bash(ngine where:*)
 ---

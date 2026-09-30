@@ -1,4 +1,6 @@
 ---
+name: status
+disable-model-invocation: true
 description: Check every link between Claude Code and the Apeiron editor, and say how to fix what is broken
 allowed-tools: Bash(ngine mcp status:*), Bash(ngine doctor:*), Bash(ngine mcp list:*)
 ---

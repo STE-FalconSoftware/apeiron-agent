@@ -1,4 +1,6 @@
 ---
+name: launch
+disable-model-invocation: true
 description: Start (or attach to) the Apeiron editor for the current folder's project
 argument-hint: [project folder]
 allowed-tools: Bash(ngine mcp list:*), Bash(ngine mcp status:*)
