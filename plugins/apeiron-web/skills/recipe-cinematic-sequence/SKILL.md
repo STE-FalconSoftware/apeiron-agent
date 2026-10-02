@@ -29,4 +29,4 @@ Check each op's arguments with `ngine.describe` before the first call: the recip
 order and the discipline, the live schema is the spelling.
 
 Start the session with `editor.context`. If `ngine.recipes` cannot be reached the editor is not
-running or not connected: run `/apeiron:status`.
+running or not connected: run `/apeiron-web:status`.

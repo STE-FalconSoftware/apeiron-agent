@@ -1,29 +1,52 @@
 # Apeiron for Claude Code
 
-The official Claude Code plugin and marketplace for the Apeiron Engine. Five slash commands and a set of
-skills connect your Claude Code to the engine you installed; from the first prompt your agent knows the editor,
-follows the engine's own workflows, and drives the scene with measured evidence.
+The official Claude Code marketplace for the Apeiron Engine. It carries **two plugins** with the same
+skills, recipes and agents; they differ only in which editor they reach:
 
-## Install
+| Plugin | Reaches | MCP server | You need |
+|---|---|---|---|
+| **`apeiron`** | the editor installed on this PC | `ngine mcp bridge` (local, starts the editor for your project) | the Apeiron Engine installed |
+| **`apeiron-web`** | the web editor at [engine.apeironengine.com](https://engine.apeironengine.com), in your browser | the hosted relay, `https://relay.apeironengine.com/mcp` (signed in with your Apeiron account) | nothing else |
 
-This plugin lives in the public `STE-FalconSoftware/apeiron-agent` repository. Without the plugin,
+From the first prompt your agent knows the editor, follows the engine's own workflows, and drives the
+scene with measured evidence.
+
+## Install — the installed editor (`apeiron`)
+
+You need the Apeiron Engine installed first (the installer puts the `ngine` command on your PATH; the
+launcher's **Connect your AI agent** card runs these two commands for you). In a terminal:
+
+```
+claude plugin marketplace add STE-FalconSoftware/apeiron-agent
+claude plugin install apeiron@apeiron
+```
+
+(or `/plugin marketplace add …` and `/plugin install …` inside Claude Code). Restart Claude Code. The
+first time your agent calls an `ngine.*` tool, the editor opens on the project in the folder you
+started Claude Code in — and closes again when the session ends. Nothing to configure: no ports, no
+tokens, no config files. The launcher keeps the plugin current after each engine update
+(`claude plugin marketplace update apeiron`). Without the plugin,
 `ngine mcp install --client claude-code --scope user --skills` registers the same MCP server and skills
-from the installed engine.
+from the installed engine; Codex, Cursor, Gemini CLI and VS Code use `ngine mcp install --client <name>`.
 
-You need the Apeiron Engine installed first (the installer puts the `ngine` command on your PATH).
-In Claude Code:
+## Install — the web editor (`apeiron-web`)
+
+Nothing to install but the plugin:
 
 ```
-/plugin marketplace add STE-FalconSoftware/apeiron-agent
-/plugin install apeiron@apeiron
+claude plugin marketplace add STE-FalconSoftware/apeiron-agent
+claude plugin install apeiron-web@apeiron
 ```
 
-Restart Claude Code. The first time your agent calls an `ngine.*` tool, the editor opens on the
-project in the folder you started Claude Code in — and closes again when the session ends. Nothing
-to configure: no ports, no tokens, no config files.
+Then in Claude Code run `/mcp`, choose **apeiron-web**, choose **Authenticate**, and sign in with your
+Apeiron account in the page that opens. Open [engine.apeironengine.com](https://engine.apeironengine.com)
+and sign in there with the same account: every signed-in tab is reachable by your agent with nothing
+pasted (`tab.list` lists them, `tab.attach` picks one). `/apeiron-web:connect-web` walks through it;
+`/apeiron-web:status` diagnoses it. Agents other than Claude Code use the tab's **Help > Connect AI
+Agent** (a key-paired command) instead.
 
 From an engine source checkout (developers): `/plugin marketplace add ./` then
-`/plugin install apeiron@apeiron-dev`.
+`/plugin install apeiron@apeiron-dev` (or `apeiron-web@apeiron-dev`).
 
 ## What is in it
 
@@ -32,9 +55,13 @@ From an engine source checkout (developers): `/plugin marketplace add ./` then
 | **MCP server `ngine`** (`.mcp.json`) | `ngine mcp bridge --stdio --autolaunch`: the version-agnostic launcher. It picks the engine version your project is pinned to (else the newest installed), attaches to the editor already open on this folder's project (or starts one) and closes an editor it started when your session ends. It keeps working after an engine upgrade. |
 | **Skills** `apeiron-editor`, `apeiron-game-code` | The engine's agent skills, copied verbatim from the package the engine ships. They route into the engine's own live recipes and guides (`ngine.recipes`, `ngine.guide`), which always match the installed version. |
 | **Recipe skills** `recipe-<name>` | One generated stub per authoring and gameplay recipe the engine carries (table below), so Claude Code's own skill matching can pick the right workflow. A stub is a pointer: it tells the agent to load the real recipe from the running editor. |
-| **Slash commands** (skills, user-invoked) | `/apeiron:status` (diagnose every link, with fixes), `/apeiron:launch`, `/apeiron:new-project`, `/apeiron:lookdev`, `/apeiron:report-issue`. |
+| **Slash commands** (skills, user-invoked) | `/apeiron:status` (diagnose every link, with fixes), `/apeiron:launch`, `/apeiron:new-project`, `/apeiron:lookdev`, `/apeiron:report-issue` (files the report with the Apeiron team from the editor — never on GitHub), `/apeiron:connect-web` (pair a browser tab through the `apeiron-web` plugin). |
 | **Agents** | `verifier` (read-only checks with measurements), `lookdev-judge`, `docs-scout`. |
 | **SessionStart hook** | Runs `ngine mcp bridge --context` and tells the session which editor, if any, belongs to this folder (at most 40 lines). |
+
+`apeiron-web` carries the same skills, recipe stubs and agents (generated from the same sources), its own
+three commands (`/apeiron-web:connect-web`, `/apeiron-web:status`, `/apeiron-web:report-issue`), the relay as
+an HTTP MCP server with MCP OAuth, and no SessionStart hook (there is no local editor to look for).
 
 ## Recipe skills
 
@@ -62,10 +89,12 @@ routes to them, and its `references/recipes.md` says which recipe answers which 
 | authoring | `recipe-procedural-cliffs` | `authoring/procedural-cliffs` | 14 |
 | authoring | `recipe-rig-verify-fix` | `authoring/rig-verify-fix` | 22 |
 | authoring | `recipe-scene-recreation` | `authoring/scene-recreation` | 20 |
+| authoring | `recipe-source-control` | `authoring/source-control` | 12 |
 | authoring | `recipe-terrain-erosion` | `authoring/terrain-erosion` | 6 |
 | authoring | `recipe-terrain-slab-lookdev` | `authoring/terrain-slab-lookdev` | 0 |
 | authoring | `recipe-terrain-worldgraph` | `authoring/terrain-worldgraph` | 10 |
 | authoring | `recipe-texture-graph` | `authoring/texture-graph` | 15 |
+| authoring | `recipe-vfx-from-reference` | `authoring/vfx-from-reference` | 20 |
 | gameplay | `recipe-blueprints` | `gameplay/blueprints` | 17 |
 | gameplay | `recipe-multiplayer` | `gameplay/multiplayer` | 33 |
 | gameplay | `recipe-play-step-verify` | `gameplay/play-step-verify` | 9 |

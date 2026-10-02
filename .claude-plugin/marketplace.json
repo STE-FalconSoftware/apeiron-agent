@@ -21,6 +21,19 @@
         "graphics"
       ],
       "source": "./plugins/apeiron"
+    },
+    {
+      "name": "apeiron-web",
+      "description": "Drive the Apeiron Engine web editor (engine.apeironengine.com) from Claude Code: the same agent skills, recipes and agents as the apeiron plugin, with the hosted relay as its MCP server. Sign in once with /mcp and every browser tab signed into your Apeiron account is reachable.",
+      "version": "0.1.0",
+      "category": "development",
+      "tags": [
+        "game-engine",
+        "mcp",
+        "web",
+        "graphics"
+      ],
+      "source": "./plugins/apeiron-web"
     }
   ]
 }
