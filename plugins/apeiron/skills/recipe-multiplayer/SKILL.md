@@ -1,6 +1,6 @@
 ---
 name: recipe-multiplayer
-description: "A multiplayer game the Unreal way — Rust GameMode + replicated components, Blueprint/Rhai RPCs, RepNotify, sessions (LAN or Steam), invites, achievements, voice chat, proof on every peer."
+description: "A multiplayer game the Unreal way — Rust GameMode + replicated components, Blueprint/Rhai RPCs, RepNotify, sessions (LAN, Steam or the game relay by join code), invites, achievements, voice chat, proof on every peer."
 ---
 
 # Multiplayer (recipe stub)
@@ -27,7 +27,7 @@ alone.
 
 ## Ops it names
 
-`project.new`, `build.run`, `build.status`, `build.relaunch`, `game.set_ruleset`, `game.ruleset`, `place.actor`, `scene.add_component`, `blueprint.from_text`, `blueprint.validate`, `script.compile_check`, `script.set`, `game.play`, `game.stop`, `net.state`, `net.emulation`, `net.server_health`, `game.host_session`, `game.find_sessions`, `game.join_session`, `game.destroy_session`, `game.session_state`, `game.session_menu`, `game.invite_friends`, `game.achievement`, `services.state`, `voice.state`, `voice.set`, `voice.mute`, `settings.set`, `input.action`, `anim.state`, `scene.query`
+`project.new`, `build.run`, `build.status`, `build.relaunch`, `game.set_ruleset`, `game.ruleset`, `place.actor`, `scene.add_component`, `blueprint.from_text`, `blueprint.validate`, `script.compile_check`, `script.set`, `game.play`, `game.stop`, `net.state`, `net.emulation`, `net.server_health`, `game.host_session`, `game.find_sessions`, `game.join_session`, `game.destroy_session`, `game.session_state`, `game.session_menu`, `net.relay_host`, `net.relay_join`, `game.invite_friends`, `game.achievement`, `services.state`, `voice.state`, `voice.set`, `voice.mute`, `settings.set`, `input.action`, `anim.state`, `scene.query`
 
 Check each op's arguments with `ngine.describe` before the first call: the recipe is the
 order and the discipline, the live schema is the spelling.

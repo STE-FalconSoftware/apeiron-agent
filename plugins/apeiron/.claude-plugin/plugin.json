@@ -1,8 +1,8 @@
 {
   "name": "apeiron",
   "displayName": "Apeiron Engine",
-  "version": "0.1.0",
-  "description": "Drive the Apeiron Engine editor from Claude Code: the engine's agent skills, an MCP server that starts the editor for your project on the first call, slash commands, verification agents and a session hook that says which editor belongs to this folder.",
+  "version": "0.2.0",
+  "description": "Drive the Apeiron Engine editor from Claude Code: the engine's agent skills, an MCP server that starts the editor for your project on the first call, slash commands, verification agents, a session hook that says which editor belongs to this folder, and a live editor band (selection-aware prompts, readable editor tool rows, one-key Undo turn).",
   "author": {
     "name": "STE Falcon Software",
     "url": "https://apeiron-engine.pages.dev"
@@ -20,5 +20,6 @@
   ],
   "metadata": {
     "engine": ">=0.2.0-preview.1 <0.3.0"
-  }
+  },
+  "types": "./types/index.d.ts"
 }

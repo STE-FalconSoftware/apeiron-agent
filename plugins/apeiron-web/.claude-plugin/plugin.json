@@ -1,0 +1,25 @@
+{
+  "name": "apeiron-web",
+  "displayName": "Apeiron Engine (web)",
+  "version": "0.2.0",
+  "description": "Drive the Apeiron Engine web editor (engine.apeironengine.com) from Claude Code: the same agent skills, recipes and agents as the apeiron plugin, with the hosted relay as its MCP server. Sign in once with /mcp and every browser tab signed into your Apeiron account is reachable. Includes the live editor band (selection-aware prompts, readable editor tool rows, one-key Undo turn). Available once the hosted relay is live.",
+  "author": {
+    "name": "STE Falcon Software",
+    "url": "https://apeiron-engine.pages.dev"
+  },
+  "homepage": "https://apeiron-engine.pages.dev",
+  "repository": "https://github.com/STE-FalconSoftware/apeiron-agent",
+  "license": "MIT OR Apache-2.0",
+  "keywords": [
+    "apeiron",
+    "game-engine",
+    "mcp",
+    "web",
+    "wgpu",
+    "agent"
+  ],
+  "metadata": {
+    "engine": ">=0.2.0-preview.1 <0.3.0"
+  },
+  "types": "./types/index.d.ts"
+}

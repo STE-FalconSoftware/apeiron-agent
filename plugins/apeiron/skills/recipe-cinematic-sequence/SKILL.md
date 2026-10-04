@@ -1,6 +1,6 @@
 ---
 name: recipe-cinematic-sequence
-description: "Shoot a VIDEO of the scene — build a sequence, bind an animation clip to a character, frame the shot and render a frame-locked mp4 — instead of screenshotting frames by hand and hoping they line up."
+description: "Shoot a VIDEO of the scene — build a sequence, bind a clip to a character, frame the shot and render a frame-locked mp4 (with audio) or EXR/PNG sequence — instead of screenshotting frames by hand."
 ---
 
 # Cinematic sequence (recipe stub)

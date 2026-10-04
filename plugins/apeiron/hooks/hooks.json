@@ -1,5 +1,5 @@
 {
-  "description": "Apeiron: tell the session which editor (if any) belongs to this folder",
+  "description": "Apeiron: tell the session which editor (if any) belongs to this folder; live.tsx is the editor band, selection-aware prompts, readable editor tool rows and Undo turn",
   "hooks": {
     "SessionStart": [
       {
@@ -14,5 +14,6 @@
         ]
       }
     ]
-  }
+  },
+  "modules": ["./live.tsx"]
 }
