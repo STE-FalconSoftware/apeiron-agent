@@ -31,8 +31,6 @@ from the installed engine; Codex, Cursor, Gemini CLI and VS Code use `ngine mcp 
 
 ## Install — the web editor (`apeiron-web`)
 
-> **Available once the hosted relay is live.** The relay's sign-in (MCP OAuth) and the Apeiron accounts service are not deployed yet, so `apeiron-web` cannot connect today.
-
 Nothing to install but the plugin:
 
 ```

@@ -4,8 +4,6 @@ disable-model-invocation: true
 description: Pair the Apeiron web editor (a browser tab) with this Claude Code through the hosted relay
 ---
 
-**Available once the hosted relay is live.** The relay's sign-in and the Apeiron accounts service are not deployed yet: if a step below fails for that reason, say so plainly instead of troubleshooting further.
-
 Connect me to the Apeiron WEB editor (https://engine.apeironengine.com) in my browser. This plugin's
 `ngine` server drives an editor INSTALLED on this machine; a browser tab is reached through the hosted
 relay instead, by the companion plugin `apeiron-web`. Walk me through it and check each step:
