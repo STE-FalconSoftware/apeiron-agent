@@ -4,8 +4,6 @@ disable-model-invocation: true
 description: Connect to my Apeiron web editor tab through the relay, signed in with my Apeiron account
 ---
 
-**Available once the hosted relay is live.** The relay's sign-in and the Apeiron accounts service are not deployed yet: if a step below fails for that reason, say so plainly instead of troubleshooting further.
-
 Connect me to my Apeiron web editor (https://engine.apeironengine.com) and check each link:
 
 1. Call `tab.list` on the `apeiron-web` server. If the call is refused as unauthorized, tell me to

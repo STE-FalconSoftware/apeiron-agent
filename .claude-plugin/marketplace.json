@@ -24,7 +24,7 @@
     },
     {
       "name": "apeiron-web",
-      "description": "Drive the Apeiron Engine web editor (engine.apeironengine.com) from Claude Code: the same agent skills, recipes and agents as the apeiron plugin, with the hosted relay as its MCP server. Sign in once with /mcp and every browser tab signed into your Apeiron account is reachable. Includes the live editor band (selection-aware prompts, readable editor tool rows, one-key Undo turn). Available once the hosted relay is live.",
+      "description": "Drive the Apeiron Engine web editor (engine.apeironengine.com) from Claude Code: the same agent skills, recipes and agents as the apeiron plugin, with the hosted relay as its MCP server. Sign in once with /mcp and every browser tab signed into your Apeiron account is reachable. Includes the live editor band (selection-aware prompts, readable editor tool rows, one-key Undo turn).",
       "version": "0.2.0",
       "category": "development",
       "tags": [
