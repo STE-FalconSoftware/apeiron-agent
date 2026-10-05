@@ -1,0 +1,6 @@
+{
+  "description": "Apeiron (web): the live editor band, selection-aware prompts, readable editor tool rows and Undo turn",
+  "modules": [
+    "./live.tsx"
+  ]
+}

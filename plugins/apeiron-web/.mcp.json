@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "apeiron-web": {
+      "type": "http",
+      "url": "https://relay.apeironengine.com/mcp"
+    }
+  }
+}

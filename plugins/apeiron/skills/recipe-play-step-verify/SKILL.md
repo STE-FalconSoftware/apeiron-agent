@@ -1,6 +1,6 @@
 ---
 name: recipe-play-step-verify
-description: "Deterministic play-testing over MCP — pause-and-step exact tick windows, the input latch lag, spawn placement, 3D pickup radius, what serializes, and hash-verified stop-restore."
+description: "Deterministic play-testing over MCP — pause-and-step exact tick windows, the input latch lag, spawn placement, 3D pickup radius, what serializes, and Play on a duplicated world (Stop drops it)."
 ---
 
 # Play step verify (recipe stub)

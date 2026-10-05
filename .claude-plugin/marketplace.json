@@ -6,13 +6,13 @@
   },
   "metadata": {
     "description": "Agent tooling for the Apeiron Engine",
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "plugins": [
     {
       "name": "apeiron",
-      "description": "Drive the Apeiron Engine editor from Claude Code: the engine's agent skills, an MCP server that starts the editor for your project on the first call, slash commands, verification agents and a session hook that says which editor belongs to this folder.",
-      "version": "0.1.0",
+      "description": "Drive the Apeiron Engine editor from Claude Code: the engine's agent skills, an MCP server that starts the editor for your project on the first call, slash commands, verification agents, a session hook that says which editor belongs to this folder, and a live editor band (selection-aware prompts, readable editor tool rows, one-key Undo turn).",
+      "version": "0.2.0",
       "category": "development",
       "tags": [
         "game-engine",
@@ -21,6 +21,19 @@
         "graphics"
       ],
       "source": "./plugins/apeiron"
+    },
+    {
+      "name": "apeiron-web",
+      "description": "Drive the Apeiron Engine web editor (engine.apeironengine.com) from Claude Code: the same agent skills, recipes and agents as the apeiron plugin, with the hosted relay as its MCP server. Sign in once with /mcp and every browser tab signed into your Apeiron account is reachable. Includes the live editor band (selection-aware prompts, readable editor tool rows, one-key Undo turn). Available once the hosted relay is live.",
+      "version": "0.2.0",
+      "category": "development",
+      "tags": [
+        "game-engine",
+        "mcp",
+        "web",
+        "graphics"
+      ],
+      "source": "./plugins/apeiron-web"
     }
   ]
 }
